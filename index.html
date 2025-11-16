@@ -3,150 +3,199 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Winzie | AI & Robotics Portfolio</title>
+    <title>Winzie | AI & Robotics Mission Control</title>
     <link rel="stylesheet" href="style.css">
-    <!-- Font Awesome untuk ikon -->
+    <!-- Font Awesome untuk ikon (tetap dipertahankan) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <!-- Typing SVG Script -->
-    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
 </head>
 <body>
-    <header>
-        <div class="container">
-            <h1>Hi, I'm Winzie</h1>
-            <p><span id="typed-text"></span></p>
-        </div>
-    </header>
+    <div id="mission-control-container">
+        <header id="top-bar">
+            <div class="logo">WINZIE <span class="subtext">MCC</span></div>
+            <nav class="main-nav">
+                <a href="#" class="nav-item active" data-panel="overview">OVERVIEW</a>
+                <a href="#" class="nav-item" data-panel="missions">MISSIONS</a>
+                <a href="#" class="nav-item" data-panel="skills">SKILLS MATRIX</a>
+                <a href="#" class="nav-item" data-panel="contact">COMMUNICATIONS</a>
+            </nav>
+            <div class="status-indicators">
+                <span class="indicator online">STATUS: ONLINE</span>
+                <span class="indicator temp">TEMP: 28°C</span>
+            </div>
+        </header>
 
-    <section id="about" class="container">
-        <h2><i class="fas fa-user-circle"></i> About Me</h2>
-        <p>Saya seorang pelajar Diploma Kejuruteraan Komputer yang minat mendalam dalam **AI, elektronik, IoT, dan robotik**. Kini fokus membangunkan **AI-DCAS** — sistem kehadiran berasaskan pengecaman wajah — dan **Kaira**, AI assistant untuk automasi. Saya suka menggabungkan perisian dan perkakasan untuk menghasilkan projek yang praktikal dan inovatif.</p>
-        <p>Saya mencari peluang untuk **projek kolaborasi** berkaitan AI, IoT, atau robotik, serta **internship** yang fokus pada AI atau sistem embedded. Saya juga sentiasa eager untuk belajar teknologi baru seperti Python advanced, OpenCV, dan embedded systems.</p>
-    </section>
-
-    <section id="skills" class="container">
-        <h2><i class="fas fa-code"></i> Skills & Technologies</h2>
-        <div class="skills-grid">
-            <div class="skill-category">
-                <h3>Programming Languages</h3>
-                <ul>
-                    <li>Python</li>
-                    <li>C++</li>
-                    <li>JavaScript</li>
-                    <li>HTML/CSS</li>
-                    <li>SQL</li>
+        <main id="main-display">
+            <!-- Left Panel: Mission List / Navigation -->
+            <aside id="left-panel">
+                <div class="panel-header">ACTIVE MISSIONS</div>
+                <ul id="mission-list">
+                    <!-- Missions will be loaded here by JavaScript -->
                 </ul>
-            </div>
-            <div class="skill-category">
-                <h3>Frameworks/Libraries</h3>
-                <ul>
-                    <li>Flask</li>
-                    <li>FastAPI</li>
-                    <li>OpenCV</li>
-                    <li>Socket Programming</li>
+                <div class="panel-header" style="margin-top: 20px;">EDUCATION LOG</div>
+                <div class="education-item">
+                    <h3>Diploma Kejuruteraan Komputer</h3>
+                    <p><strong>Institusi:</strong> Politeknik Sultan Mizan Zainal Abidin</p>
+                    <p><strong>Tahun:</strong> Sehingga 2026</p>
+                    <p><strong>Fokus:</strong> AI-DCAS, target 4.0 GPA.</p>
+                </div>
+            </aside>
+
+            <!-- Center Panel: Main Content Area -->
+            <section id="center-panel">
+                <!-- OVERVIEW PANEL -->
+                <div id="overview-panel" class="content-panel active">
+                    <div class="panel-header">SYSTEM OVERVIEW</div>
+                    <div class="overview-grid">
+                        <div class="grid-item">
+                            <h3>Total Missions</h3>
+                            <p id="total-missions">0</p>
+                        </div>
+                        <div class="grid-item">
+                            <h3>Completed</h3>
+                            <p id="completed-missions">0</p>
+                        </div>
+                        <div class="grid-item">
+                            <h3>In Progress</h3>
+                            <p id="in-progress-missions">0</p>
+                        </div>
+                        <div class="grid-item data-chart">
+                            <h3>Skill Progression</h3>
+                            <canvas id="skill-chart"></canvas>
+                        </div>
+                        <div class="grid-item data-map">
+                            <h3>IoT Device Map</h3>
+                            <div id="iot-map-placeholder">
+                                <i class="fas fa-satellite-dish" style="font-size: 3em; margin-bottom: 10px;"></i>
+                                <br>Sensor Array Online...
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- MISSION DETAIL PANEL -->
+                <div id="mission-detail-panel" class="content-panel">
+                    <div class="panel-header">MISSION: <span id="mission-title">SELECT MISSION</span></div>
+                    <div class="mission-details-grid">
+                        <div class="detail-box full-width">
+                            <h3>Description</h3>
+                            <p id="mission-description">Select a mission from the left panel to view details.</p>
+                        </div>
+                        <div class="detail-box">
+                            <h3>Status</h3>
+                            <p id="mission-status"></p>
+                        </div>
+                        <div class="detail-box">
+                            <h3>Technologies</h3>
+                            <p id="mission-tech"></p>
+                        </div>
+                        <div class="detail-box">
+                            <h3>Core Skills</h3>
+                            <p id="mission-skills"></p>
+                        </div>
+                        <div class="detail-box">
+                            <h3>Duration</h3>
+                            <p id="mission-duration"></p>
+                        </div>
+                        <div class="detail-box full-width">
+                            <h3>Mission Data / Output</h3>
+                            <div id="mission-data-output">
+                                <img id="mission-image" src="" alt="Mission Visual" style="display:none; max-width:100%; height:auto;">
+                                <div id="robot-sim-placeholder" style="display:none; width:100%; height:300px; background-color: #0d1a2f; border: 1px solid #00f0ff; color: #00f0ff; display:flex; justify-content:center; align-items:center;">
+                                    Robot Simulation Area
+                                </div>
+                                <canvas id="mission-chart-detail" style="display:none; max-width:100%; height:200px;"></canvas>
+                                <pre id="ai-output" style="display:none; background-color:#0d1a2f; padding:10px; border:1px solid #00f0ff; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;"></pre>
+                            </div>
+                        </div>
+                        <div class="detail-box full-width">
+                            <h3>GitHub / Demo Link</h3>
+                            <p><a id="mission-link" href="#" target="_blank">View Project Repository / Demo</a></p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SKILLS MATRIX PANEL -->
+                <div id="skills-panel" class="content-panel">
+                    <div class="panel-header">SKILLS MATRIX</div>
+                    <div class="skills-grid">
+                        <div class="skill-category">
+                            <h3>Programming Languages</h3>
+                            <ul>
+                                <li>Python</li>
+                                <li>C++</li>
+                                <li>JavaScript</li>
+                                <li>HTML/CSS</li>
+                                <li>SQL</li>
+                            </ul>
+                        </div>
+                        <div class="skill-category">
+                            <h3>Frameworks/Libraries</h3>
+                            <ul>
+                                <li>Flask</li>
+                                <li>FastAPI</li>
+                                <li>OpenCV</li>
+                                <li>Socket Programming</li>
+                            </ul>
+                        </div>
+                        <div class="skill-category">
+                            <h3>Hardware / Electronics</h3>
+                            <ul>
+                                <li>Raspberry Pi</li>
+                                <li>Arduino</li>
+                                <li>ESP32</li>
+                                <li>Sensors & Microcontrollers</li>
+                            </ul>
+                        </div>
+                        <div class="skill-category">
+                            <h3>Tools & Concepts</h3>
+                            <ul>
+                                <li>Git & VS Code</li>
+                                <li>Linux</li>
+                                <li>SQLite</li>
+                                <li>Computer Vision</li>
+                                <li>IoT Systems & Robotics Prototyping</li>
+                            </ul>
+                        </div>
+                        <div class="skill-category full-width">
+                            <h3>About Me // Status Report</h3>
+                            <p style="text-align: justify; line-height: 1.8; color: #c9d1d9;">
+                                Saya seorang pelajar Diploma Kejuruteraan Komputer yang minat mendalam dalam **AI, elektronik, IoT, dan robotik**. Kini fokus membangunkan **AI-DCAS** — sistem kehadiran berasaskan pengecaman wajah — dan **Kaira**, AI assistant untuk automasi. Saya suka menggabungkan perisian dan perkakasan untuk menghasilkan projek yang praktikal dan inovatif.
+                            </p>
+                            <p style="text-align: justify; line-height: 1.8; color: #c9d1d9;">
+                                Saya mencari peluang untuk **projek kolaborasi** berkaitan AI, IoT, atau robotik, serta **internship** yang fokus pada AI atau sistem embedded. Saya juga sentiasa eager untuk belajar teknologi baru seperti Python advanced, OpenCV, dan embedded systems.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CONTACT PANEL -->
+                <div id="contact-panel" class="content-panel">
+                    <div class="panel-header">COMMUNICATION HUB</div>
+                    <div class="contact-info">
+                        <p>If you wish to initiate communication or collaborate on a mission, please use the following channels:</p>
+                        <p><strong>Email:</strong> <a href="mailto:your.email@example.com">winzie.dev@example.com</a></p>
+                        <p><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/winzie_ai_dev" target="_blank">linkedin.com/in/winzie_ai_dev</a></p>
+                        <p><strong>GitHub:</strong> <a href="https://github.com/itswinzie" target="_blank">github.com/itswinzie</a></p>
+                        <p><strong>Location:</strong> Earth Orbit Station - Sector 7 (Kuala Lumpur, Malaysia)</p>
+                        <p class="note" style="margin-top: 20px; color: #8b949e;">Jangan ragu untuk menghubungi saya untuk sebarang kolaborasi atau pertanyaan!</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Right Panel: Mission Log / Status Feed -->
+            <aside id="right-panel">
+                <div class="panel-header">MISSION LOG</div>
+                <ul id="mission-log-feed">
+                    <li class="log-entry success">[00:00:00] System initialized. Welcome, Commander Winzie.</li>
+                    <li class="log-entry info">[00:00:01] Loading portfolio data...</li>
+                    <li class="log-entry success">[00:00:02] Data load complete.</li>
+                    <li class="log-entry info">[00:00:03] Displaying default overview.</li>
                 </ul>
-            </div>
-            <div class="skill-category">
-                <h3>Hardware / Electronics</h3>
-                <ul>
-                    <li>Raspberry Pi</li>
-                    <li>Arduino</li>
-                    <li>ESP32</li>
-                    <li>Sensors & Microcontrollers</li>
-                </ul>
-            </div>
-            <div class="skill-category">
-                <h3>Tools & Concepts</h3>
-                <ul>
-                    <li>Git & VS Code</li>
-                    <li>Linux</li>
-                    <li>SQLite</li>
-                    <li>Computer Vision</li>
-                    <li>IoT Systems & Robotics Prototyping</li>
-                </ul>
-            </div>
-        </div>
-    </section>
+            </aside>
+        </main>
+    </div>
 
-    <section id="projects" class="container">
-        <h2><i class="fas fa-project-diagram"></i> Featured Projects</h2>
-        <div class="project-grid">
-            <div class="project-card">
-                <h3>AI-DCAS – Face Recognition Attendance System</h3>
-                <p>Sistem kehadiran berasaskan pengecaman wajah yang dapat menguruskan database pelajar secara real-time dan offline.</p>
-                <p class="role"><strong>Peranan:</strong> Pembangunan backend Python, integrasi OpenCV dan Raspberry Pi, reka bentuk GUI.</p>
-                <div class="tech-stack">
-                    <span>Python</span><span>OpenCV</span><span>SQLite</span><span>Flask</span><span>Raspberry Pi</span><span>face_recognition</span>
-                </div>
-                <div class="project-links">
-                    <a href="https://github.com/itswinzie/AI-DCAS" target="_blank" class="btn"><i class="fab fa-github"></i> GitHub Repo</a>
-                    <!-- <a href="#" target="_blank" class="btn"><i class="fas fa-external-link-alt"></i> Live Demo</a> -->
-                </div>
-            </div>
-
-            <div class="project-card">
-                <h3>Kaira – AI Assistant</h3>
-                <p>Pembantu AI untuk automasi tugas harian, kawalan IoT, dan integrasi projek lain.</p>
-                <p class="role"><strong>Peranan:</strong> Reka bentuk aliran kerja AI, integrasi dengan sensor/IoT, eksperimen model AI.</p>
-                <div class="tech-stack">
-                    <span>Python</span><span>Raspberry Pi</span><span>API Integration</span><span>Automation Scripts</span>
-                </div>
-                <div class="project-links">
-                    <a href="https://github.com/itswinzie/Kaira" target="_blank" class="btn"><i class="fab fa-github"></i> GitHub Repo</a>
-                </div>
-            </div>
-
-            <div class="project-card">
-                <h3>Raspberry Pi & Electronics Projects</h3>
-                <p>Eksperimen projek elektronik termasuk streaming kamera Pi → Mini PC, sensor automasi, dan prototaip robotik.</p>
-                <p class="role"><strong>Peranan:</strong> Hardware setup, programming microcontrollers, testing dan debugging.</p>
-                <div class="tech-stack">
-                    <span>Raspberry Pi</span><span>Arduino</span><span>ESP32</span><span>Sensors</span><span>Python</span><span>C++</span>
-                </div>
-                <div class="project-links">
-                    <a href="https://github.com/itswinzie/RaspberryPi-Electronics-Projects" target="_blank" class="btn"><i class="fab fa-github"></i> GitHub Repo</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="education" class="container">
-        <h2><i class="fas fa-graduation-cap"></i> Education</h2>
-        <div class="education-item">
-            <h3>Diploma Kejuruteraan Komputer</h3>
-            <p><strong>Institusi:</strong> (Politeknik Sultan Mizan Zainal Abidin)</p>
-            <p><strong>Tahun:</strong> Sehingga 2026</p>
-            <p><strong>Fokus:</strong> Projek akhir semester seperti AI-DCAS, target 4.0 GPA.</p>
-        </div>
-    </section>
-
-    <section id="contact" class="container">
-        <h2><i class="fas fa-envelope"></i> Connect with Me</h2>
-        <div class="contact-links">
-            <a href="https://github.com/itswinzie" target="_blank" class="contact-btn"><i class="fab fa-github"></i> GitHub</a>
-            <a href="https://linkedin.com/in/yourlinkedinprofile" target="_blank" class="contact-btn"><i class="fab fa-linkedin"></i> LinkedIn</a>
-            <a href="mailto:your.email@example.com" class="contact-btn"><i class="fas fa-envelope"></i> Email</a>
-            <!-- <a href="https://twitter.com/yourtwitter" target="_blank" class="contact-btn"><i class="fab fa-twitter"></i> Twitter</a> -->
-        </div>
-        <p class="note">Jangan ragu untuk menghubungi saya untuk sebarang kolaborasi atau pertanyaan!</p>
-    </section>
-
-    <footer>
-        <div class="container">
-            <p>© 2025 Winzie. Crafted with <i class="fas fa-heart"></i></p>
-        </div>
-    </footer>
-
-    <script>
-        var typed = new Typed('#typed-text', {
-            strings: ["Computer Engineering Student", "AI, Electronics & Robotics Enthusiast", "Building Innovative Solutions"],
-            typeSpeed: 50,
-            backSpeed: 25,
-            loop: true,
-            smartBackspace: true,
-            showCursor: true,
-            cursorChar: '|',
-        });
-    </script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
