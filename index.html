@@ -1,245 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Winzie - Computer Engineering Student</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Winzie Portfolio</title>
+    <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-    <header class="header">
-        <div class="container">
-            <h1 class="logo"><a href="#home">Winzie</a></h1>
-            <nav class="navbar">
-                <ul class="nav-list">
-                    <li><a href="#home" class="nav-link">Home</a></li>
-                    <li><a href="#about" class="nav-link">About</a></li>
-                    <li><a href="#projects" class="nav-link">Projects</a></li>
-                    <li><a href="#skills" class="nav-link">Skills</a></li>
-                    <li><a href="#education" class="nav-link">Education</a></li>
-                    <li><a href="#contact" class="nav-link">Contact</a></li>
-                </ul>
-                <a href="#contact" class="btn btn-primary">Connect with Me</a>
-            </nav>
-            <div class="hamburger">
-                <i class="fas fa-bars"></i>
-            </div>
-        </div>
+    <!-- HEADER -->
+    <header>
+        <h1>Winzie</h1>
+        <p>Computer Science Student • Web Dev & UI/UX Enthusiast</p>
     </header>
 
-    <main>
-        <section id="home" class="hero-section">
-            <div class="container">
-                <div class="hero-content">
-                    <div class="hero-image-wrapper">
-                        <!-- Ganti dengan foto profilmu -->
-                        <img src="https://via.placeholder.com/250x250?text=Winzie+Photo" alt="Winzie's Profile Picture" class="profile-pic">
-                    </div>
-                    <div class="hero-text">
-                        <p class="greeting">Hi there!</p>
-                        <h2>I'm <span class="highlight">Winzie</span></h2>
-                        <p class="tagline">Computer Engineering Student | AI, Electronics & Robotics Enthusiast</p>
-                        <p class="bio">
-                            Hai! Saya seorang pelajar Kejuruteraan Komputer yang minat dalam AI, elektronik, IoT, dan robotik. Kini fokus membangunkan AI-DCAS — sistem kehadiran berasaskan pengecaman wajah — dan Kaira, AI assistant untuk automasi. Saya suka menggabungkan perisian dan perkakasan untuk menghasilkan projek yang praktikal dan inovatif.
-                        </p>
-                        <div class="hero-buttons">
-                            <a href="#projects" class="btn btn-secondary">Explore Projects</a>
-                            <a href="#" class="btn btn-outline">Download CV</a> <!-- Ganti # dengan link CV-mu -->
-                        </div>
-                        <div class="social-icons">
-                            <a href="https://github.com/itswinzie" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
-                            <a href="#" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a> <!-- Ganti # dengan link LinkedIn-mu -->
-                            <a href="mailto:irwanzakaria134@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="about" class="about-section section-padding">
-            <div class="container">
-                <h2 class="section-title">About Me</h2>
-                <div class="about-grid">
-                    <div class="about-card">
-                        <h3><i class="fas fa-user-circle"></i> Who I Am</h3>
-                        <ul>
-                            <li>Nama: Winzie</li>
-                            <li>Asal/Institusi: Pelajar Diploma Kejuruteraan Komputer</li>
-                            <li>Minat utama: AI, elektronik, robotik, IoT, pengautomatan</li>
-                        </ul>
-                    </div>
-                    <div class="about-card">
-                        <h3><i class="fas fa-search"></i> What I'm Looking For</h3>
-                        <ul>
-                            <li>Projek kolaborasi berkaitan AI, IoT, atau robotik</li>
-                            <li>Internship yang fokus pada AI atau sistem embedded</li>
-                            <li>Kesempatan belajar teknologi baru (Python advanced, OpenCV, IoT, embedded systems)</li>
-                        </ul>
-                    </div>
-                    <div class="about-card">
-                        <h3><i class="fas fa-code"></i> Key Skills</h3>
-                        <ul>
-                            <li>Python, C++, JavaScript, HTML/CSS, SQL</li>
-                            <li>Framework/Libraries: Flask, FastAPI, OpenCV</li>
-                            <li>Hardware: Raspberry Pi, Arduino, ESP32, sensor & microcontrollers</li>
-                            <li>Tools: Git, VS Code, Linux, SQLite</li>
-                            <li>AI/Computer Vision: face_recognition, basic TensorFlow</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="projects" class="projects-section section-padding">
-            <div class="container">
-                <h2 class="section-title">My Featured Projects</h2>
-                <div class="project-grid">
-                    <!-- Project 1: AI-DCAS -->
-                    <div class="project-card">
-                        <img src="https://via.placeholder.com/400x250?text=AI-DCAS" alt="AI-DCAS Project Thumbnail">
-                        <h3>AI-DCAS – Face Recognition Attendance System</h3>
-                        <p>Sistem kehadiran berasaskan pengecaman wajah yang dapat menguruskan database pelajar secara real-time dan offline.</p>
-                        <div class="project-tech">Python, OpenCV, SQLite, Flask, Raspberry Pi</div>
-                        <a href="https://github.com/itswinzie/AI-DCAS" target="_blank" class="btn btn-project">View Project <i class="fas fa-external-link-alt"></i></a>
-                    </div>
-
-                    <!-- Project 2: Kaira – AI Assistant -->
-                    <div class="project-card">
-                        <img src="https://via.placeholder.com/400x250?text=Kaira+AI" alt="Kaira AI Assistant Project Thumbnail">
-                        <h3>Kaira – AI Assistant</h3>
-                        <p>Pembantu AI untuk automasi tugas harian, kawalan IoT, dan integrasi projek lain.</p>
-                        <div class="project-tech">Python, Raspberry Pi, API Integration, Automation</div>
-                        <a href="https://github.com/itswinzie/Kaira-AI" target="_blank" class="btn btn-project">View Project <i class="fas fa-external-link-alt"></i></a>
-                    </div>
-
-                    <!-- Project 3: Raspberry Pi & Electronics -->
-                    <div class="project-card">
-                        <img src="https://via.placeholder.com/400x250?text=RPi+Electronics" alt="Raspberry Pi Electronics Project Thumbnail">
-                        <h3>Raspberry Pi & Electronics Projects</h3>
-                        <p>Eksperimen projek elektronik termasuk streaming kamera Pi → Mini PC, sensor automasi, dan prototaip robotik.</p>
-                        <div class="project-tech">Raspberry Pi, Arduino, ESP32, Python, C++</div>
-                        <a href="https://github.com/itswinzie/RPi-Electronics" target="_blank" class="btn btn-project">View Project <i class="fas fa-external-link-alt"></i></a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="skills" class="skills-section section-padding">
-            <div class="container">
-                <h2 class="section-title">My Technical Toolkit</h2>
-                <div class="skills-grid">
-                    <div class="skill-category">
-                        <h3>Programming Languages</h3>
-                        <div class="skill-icons">
-                            <span class="skill-item"><i class="fab fa-python"></i> Python</span>
-                            <span class="skill-item"><i class="fas fa-code"></i> C++</span>
-                            <span class="skill-item"><i class="fab fa-js"></i> JavaScript</span>
-                            <span class="skill-item"><i class="fab fa-html5"></i> HTML</span>
-                            <span class="skill-item"><i class="fab fa-css3-alt"></i> CSS</span>
-                            <span class="skill-item"><i class="fas fa-database"></i> SQL</span>
-                        </div>
-                    </div>
-                    <div class="skill-category">
-                        <h3>Frameworks/Libraries</h3>
-                        <div class="skill-icons">
-                            <span class="skill-item">Flask</span>
-                            <span class="skill-item">FastAPI</span>
-                            <span class="skill-item">OpenCV</span>
-                            <span class="skill-item">Socket Programming</span>
-                        </div>
-                    </div>
-                    <div class="skill-category">
-                        <h3>Databases</h3>
-                        <div class="skill-icons">
-                            <span class="skill-item">SQLite</span>
-                            <span class="skill-item">MySQL (basic)</span>
-                        </div>
-                    </div>
-                    <div class="skill-category">
-                        <h3>Tools</h3>
-                        <div class="skill-icons">
-                            <span class="skill-item"><i class="fab fa-git-alt"></i> Git</span>
-                            <span class="skill-item"><i class="fas fa-laptop-code"></i> VS Code</span>
-                            <span class="skill-item"><i class="fab fa-linux"></i> Linux</span>
-                            <span class="skill-item"><i class="fab fa-docker"></i> Docker (learning)</span>
-                        </div>
-                    </div>
-                    <div class="skill-category">
-                        <h3>Hardware / Electronics</h3>
-                        <div class="skill-icons">
-                            <span class="skill-item"><i class="fab fa-raspberry-pi"></i> Raspberry Pi</span>
-                            <span class="skill-item">Arduino</span>
-                            <span class="skill-item">ESP32</span>
-                            <span class="skill-item">Sensors & Relays</span>
-                        </div>
-                    </div>
-                    <div class="skill-category">
-                        <h3>Concepts</h3>
-                        <div class="skill-icons">
-                            <span class="skill-item">Computer Vision</span>
-                            <span class="skill-item">AI Integration</span>
-                            <span class="skill-item">IoT Systems</span>
-                            <span class="skill-item">Robotics Prototyping</span>
-                            <span class="skill-item">Automation</span>
-                            <span class="skill-item">Embedded Systems</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="education" class="education-section section-padding">
-            <div class="container">
-                <h2 class="section-title">Education</h2>
-                <div class="education-item">
-                    <div class="edu-icon"><i class="fas fa-graduation-cap"></i></div>
-                    <div class="edu-details">
-                        <h3>Diploma in Computer Engineering</h3>
-                        <p class="institution">Your Institution Name Here</p>
-                        <p class="years">Years: Until 2026</p>
-                        <p class="achievement">Fokus pada projek akhir semester seperti AI-DCAS, target 4.0 GPA</p>
-                    </div>
-                </div>
-                <!-- Tambahkan item pendidikan lain jika ada -->
-            </div>
-        </section>
-
-        <section id="contact" class="contact-section section-padding">
-            <div class="container">
-                <h2 class="section-title">Let's Connect!</h2>
-                <p class="contact-intro">Tertarik untuk berkolaborasi atau memiliki pertanyaan? Jangan ragu untuk menghubungi saya!</p>
-                <div class="contact-links">
-                    <a href="https://github.com/itswinzie" target="_blank" class="contact-link"><i class="fab fa-github"></i> GitHub: itswinzie</a>
-                    <a href="https://itswinzie.github.io" target="_blank" class="contact-link"><i class="fas fa-globe"></i> Portfolio: itswinzie.github.io</a>
-                    <a href="mailto:irwanzakaria134@gmail.com" class="contact-link"><i class="fas fa-envelope"></i> Email: irwanzakaria134@gmail.com</a>
-                </div>
-                <!-- Anda bisa menambahkan formulir kontak di sini jika diinginkan -->
-                <!--
-                <form class="contact-form">
-                    <input type="text" placeholder="Your Name" required>
-                    <input type="email" placeholder="Your Email" required>
-                    <textarea placeholder="Your Message" rows="5" required></textarea>
-                    <button type="submit" class="btn btn-primary">Send Message</button>
-                </form>
-                -->
-            </div>
-        </section>
-    </main>
-
-    <footer class="footer">
-        <div class="container">
-            <p>&copy; <span id="current-year"></span> Winzie. All rights reserved.</p>
-            <div class="footer-social-icons">
-                <a href="https://github.com/itswinzie" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
-                <a href="#" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                <a href="mailto:irwanzakaria134@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
-            </div>
+    <!-- ABOUT SECTION -->
+    <section class="section" id="about">
+        <h2>About Me</h2>
+        <div class="about-box">
+            <p>
+                Hi! I'm Winzie, a Computer Science student who enjoys clean UI, simple layouts,
+                creative problem solving and building useful digital products. I'm exploring
+                front-end development, design, and anything that helps me express ideas online.
+            </p>
         </div>
+    </section>
+
+    <!-- PROJECT SECTION -->
+    <section class="section" id="projects">
+        <h2>Projects</h2>
+        <div class="project-grid">
+
+            <div class="project">
+                <h3>AI-DCAS</h3>
+                <p>
+                    Smart AI attendance system using face recognition, Raspberry Pi, and 
+                    Mini PC processing pipeline.
+                </p>
+            </div>
+
+            <div class="project">
+                <h3>DIY Launchpad</h3>
+                <p>
+                    Custom MIDI controller with RGB pads, effects, and Python-based mapping.
+                </p>
+            </div>
+
+            <div class="project">
+                <h3>Love LED Gift</h3>
+                <p>
+                    A mini LED message box with animations — built as a surprise gift project.
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>© 2025 Winzie — Portfolio</p>
     </footer>
 
-    <script src="script.js"></script>
 </body>
 </html>
